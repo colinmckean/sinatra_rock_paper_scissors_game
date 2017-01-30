@@ -3,41 +3,14 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
   end
+  #play function first checks for a draw, then checks if player_1 has a winning combination, if both are false the result is player 2 is the winner.
   def play()
-
-#     if @player_1 == "rock" && @player_2 == "scissors"
-#       "player 1 wins with rock"
-#     elsif @player_1 == "scissors" && @player_2 == "rock"
-#       "player 2 wins with rock"
-#     elsif @player_1  == "paper" && @player_2 == "scissors"
-#       "player 2 wins with scissors"
-#     elsif @player_1 == "rock" && @player_2  == "paper"
-#       "player 2 wins with paper"
-#     elsif @player_1  == "paper" && @player_2  == "scissors"
-#       "player 2 wins with scissors"
-#     elsif @player_1  == "scissors" && @player_2  == "paper"
-#       "player 2 wins with scissors"
-#     elsif @player_1 == "paper" && @player_2 == "rock"
-#       "player 2 wins with rock"
-#     elsif @player_1  == @player_2 
-#       "ITS A DRAW!"
-#     end
-#   end
-# end
-
-#winning cominations
-winning_combos = [["rock", "scissors"],["paper", "rock"],["scissors", "paper"]]
-
-if @player_1 != @player_2
-  for combo in winning_combos
-    if @player_1 == combo[0]
-      return "#{combo[0]} wins"
+    if @player_1 == @player_2
+      return "it's a draw"
+    elsif (@player_1 == "rock" && @player_2 == "scissors") || (@player_1 == "scissors" && @player_2 == "paper") || (@player_1 == "paper" && @player_2 == "rock")
+      "Player 1 wins with #{@player_1}"
     else
-      return "player 2 wins"
+      "Player 2 wins with #{@player_2}"
     end
   end
-else
-  return "ITS A DRAW"
-end
-end
 end
